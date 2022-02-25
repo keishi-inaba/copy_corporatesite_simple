@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="animation.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Sample Site6</title>
+</head>
+<body>
+  <!-- 画面遷移 -->
+  <div id="splash">
+    <div id="splash-logo"></div>
+    <div id="splash_text"></div>
+  </div>
+  <div class="splash-bg"></div>
+
+  
+  
+  <div id="container">
+    <!-- header -->
+    <header id="header">
+      <h1 class= "header-title1">
+        <a href="">
+          <span>Color</span>
+        </a>
+      </h1>
+      
+      <div class="header">
+        <h1 class="header-title">Sample Site</h1>
+      </div>
+
+      <canvas id="waveCanvas"></canvas>
+      
+    </header>
+
+    <!-- マウスアイコン -->
+    <div class="scrolldown"><span>Scroll</span></div>
+
+    
+    <!-- open_btn -->
+    <div class="open_area">
+      <div class="open_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+  
+    <!-- burger -->   
+      <nav id="g-nav">
+        <div class="g-nav-list">
+          <ul>
+            <li><a href="">TOP</a></li>
+            <li><a href="">CONCEPT</a></li>
+            <li><a href="">SERVICE</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+  
+    
+
+    <!-- main -->
+    <main id="main" class="wrapper">
+      <!-- concept -->
+      <div id="concept">
+        <div class="concept-list">
+          <h2 class="sec-title">concept</h2>
+          <h3 class="sub-title">スタイリッシュをセレクトする</h3>
+          <p class="concept-text">
+            普段使いからちょっと背伸びをしたアイテムを探す
+            <br>
+            セレクトショップを運営する株式会社カラーは
+            <br>
+            あなたの"これが欲しかった"を叶えます
+        </div>
+        </p>
+
+        <div class="btn">
+             <a href="" class="btn1 rotate">
+              <span>会社概要</span> 
+              <span>Go to the page!</span> 
+            </a>
+        </div>
+      </div>
+
+      
+      <div id="service">
+        <h2 class="sec-title">service</h2>
+        <div class="service-list">
+          <!-- service -->
+          <div class="service-content delayScroll">
+            <img src="icons/tshirt.png" alt="" class="service-img box">
+            <h3 class="service-title">Import</h3>
+            <span class="service-sub">海外ブランド仕入・卸</span>
+            <p class="service-text">
+              おもにヨーロッパ地方の
+              <br>
+              海外ブランドの仕入れ・卸
+            </p>
+          </div>
+
+          <!-- ec store -->
+          <div class="service-content delayScroll">
+            <img src="icons/baseline_laptop_windows_black_24dp.png" alt="" class="box">
+            <h3 class="service-title">EC Store</h3>
+            <span class="service-sub">ECサイトの運営</span>
+            <p class="service-text">
+              おもにヨーロッパ地方の
+              <br>
+              海外ブランドの仕入れ・卸
+            </p>
+          </div>
+
+          <!-- store -->
+          <div class="service-content delayScroll">
+            <img src="icons/baseline_store_black_24dp.png" alt="" class="box">
+            <h3 class="service-title">Store</h3>
+            <span class="service-sub">ショップ販売</span>
+            <p class="service-text">
+              都内23箇所に展開する店舗
+              <br>
+              「Corori」の運営・商品販売
+            </p>
+          </div>
+        </div>
+        <div class="btn">
+            <a href="#" class="btn1 rotate"><span>サービス詳細</span>
+              <span>Go to the page!</span>
+            </a>
+        </div>
+      </div>
+
+        <!-- about -->
+      <div id="about">
+        <div class="about-list">
+          <h2 class="sec-title">about</h2>
+
+          <div class="about-item">
+            <ul>
+              <li>
+                <dl>
+                  <dt>会社名</dt>
+                  <dd>株式会社〇〇</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>設立</dt>
+                  <dd>2021年6月</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>資本金</dt>
+                  <dd>2000万円</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>代表</dt>
+                  <dd>〇〇○○</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>所在地</dt>
+                  <dd>〒104-0000
+                      <br>
+                      東京都中央区0-0-0
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>電話</dt>
+                  <dd>00-0000-0000</dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+        <!-- contact -->
+      <div id="contact">
+        <div class="contact-list">
+          <h2 class="sec-title">contact</h2>
+
+          <div class="contact-item">
+            <span class="contact-tel">00-0000-0000</span>
+            <span class="contact-mail">info@〇〇〇〇.shop</span>
+          </div>
+
+          <div class="sns">
+            <ul>
+              <li><img src="icons/icon_017890_256.png" alt="" class="sns-icon"></li>
+              <li><img src="icons/icon_062480_256.png" alt="" class="sns-icon"></li>
+              <li><img src="icons/icon_017860_256.png" alt="" class="sns-icon"></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="wrapper">
+      <p>
+        <a href="#contact">
+          <span class="line1">contact</span>
+        </a>
+      </p>
+      <p><span class="line">&copy;COLOR.INC</span></p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

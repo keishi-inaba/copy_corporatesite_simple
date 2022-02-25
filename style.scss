@@ -1,0 +1,464 @@
+/*
+*共通設定
+*/
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.sec-title {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 1;
+  text-transform: uppercase;
+}
+
+#container {
+  background: linear-gradient(
+    45deg,
+    hsl(65, 84%, 78%),
+    hsl(88, 80%, 40%),
+    hsl(214, 95%, 69%),
+    hsl(267, 80%, 60%),
+    hsl(302, 80%, 40%)
+  );
+  background-size: 400% 400%;
+  animation: bgAnime .5s ease infinite;
+}
+
+@keyframes bgAnime {
+  0% {
+    background-position: 50% 0;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 50% 0;
+  }
+}
+
+.wrapper {
+  padding: 0 4%;
+  width: 100%;
+} 
+
+.sns-icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+// burger-menu
+#g-nav {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #666;
+  transition: all .3s;
+  text-align: center;
+  font-size: 2rem;
+  
+  &.panel {
+    opacity: 1;
+    z-index: 100;
+
+    background: linear-gradient(
+    45deg,
+    hsl(150, 80%, 40%),
+    hsl(180, 80%, 40%),
+    hsl(200, 80%, 50%),
+    hsl(240, 80%, 60%),
+    hsl(300, 80%, 40%)
+  );
+  background-size: 400% 400%;
+  animation: bgAnime 5s ease infinite;
+  }
+}
+
+
+// ナビゲーション
+#g-nav ul {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#g-nav.panel ul {
+  display: block;
+}
+
+
+#g-nav ul li a {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  color: #000;
+}
+
+
+/*
+*header 
+*/
+.header-title1 {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  font-size: 2rem;
+  padding: 10px 0;
+  line-height: 2;
+}
+
+.header {
+  position: relative;
+  top: 100px;
+  text-align: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: normal;
+  padding-top: 200px;
+}
+
+#header {
+  height: 90vh;
+}
+
+
+
+
+/*
+*concept
+*/ 
+#concept {
+  text-align: center;
+  width: 100%;
+  margin: 100px auto 150px auto;
+  height: 60vh;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  margin: 30px 0;
+}
+
+.concept-text {  
+  line-height: 4;
+  margin-bottom: 20px;
+}
+
+
+.btn1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    transform-style: preserve-3d;
+    transition: .5s;
+  }
+}
+
+
+
+// 回転前
+.rotate span:nth-child(1) {
+  background-color: transparent;
+  color: #333;
+  transform: rotateX(0);
+  transform-origin: 0 50% -25px;
+}
+
+.rotate:hover span:nth-child(1) {
+  transform: rotateX(-90deg)
+}
+
+// 回転後
+.rotate span:nth-child(2) {
+  background-color: transparent;
+  color: #333;
+  transform: rotateX(90deg);
+  transform-origin: 0 50% -25px;
+}
+.rotate:hover span:nth-child(2) {
+  transform: rotateX(0deg)
+}
+
+
+/*
+*service
+*/
+#service {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 150px;
+  height: 60vh;
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.service-sub {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.service-content {
+  // flex: (2 0 300px);
+  width: 33.3%;
+}
+
+.service-text {
+  line-height: 2;
+}
+
+.service-img {
+  width: 48px;
+  height: 48px;
+}
+
+
+/*
+*about
+*/
+#about {
+  margin-bottom: 150px;
+  text-align: center;
+  height: 60vh;
+}
+
+.about-item {
+  width: 500px;
+  margin: 30px auto;
+}
+
+.about-item dl {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
+  padding: 20px;
+
+  & dt {
+    width: 20%;
+  }
+
+  & dd {
+    width: 60%;
+    padding: 0 30px;
+  }
+}
+
+
+/*
+*contact
+*/
+#contact {
+  width: 100%;
+  padding: 100px 0 50px 0;
+  text-align: center;
+  height: 60vh;
+}
+
+.contact-item {
+  font-size: 1.2rem;
+}
+
+.contact-tel {
+  display: block;
+  padding: 20px;
+}
+
+.contact-mail {
+  display: block;
+  padding: 20px;
+}
+
+.sns ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  & li {
+    padding: 10px;
+  }
+}
+
+
+/*
+*footer
+*/
+
+#footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.line {
+  transition: .8 ease-in-out;
+  transform-origin: left;
+  display: block;
+  transform: rotate(-90deg);
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 3%;
+}
+
+.line1 {
+  transition: .8 ease-in-out;
+  transform-origin: right;
+  display: block;
+  transform: rotate(90deg);
+  padding: 10px;
+  position: fixed;
+  top: 48%;
+  right: 3%;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+/*
+*sp
+*/
+
+@media screen and(max-width:768px) {
+  .fixed {
+    height: 70vh;
+  }
+
+  .sec-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  #canvas_move {
+    height: 100px;
+  }
+
+  .service-list {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .service-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .service-text {
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    margin-bottom: 100px;
+  }
+
+  #about {
+    // margin-top: 500px;
+    padding-top: 100px 0 0 0;
+  }
+  
+  .about-item {
+    width: 100%;
+  }
+
+  #contact {
+    margin-top: 100px;
+    padding-top: 100px 0 0 0;
+  }
+
+}
+
+@media screen and(max-width:425px) {
+  //header
+
+  .header-title1 {
+    font-size: 1.8rem;
+  }
+
+  //concept
+
+  #concept {
+    height: 70vh;
+
+    & .sec-title {
+      margin-bottom: 40px;
+    }
+
+    & .concept-text {
+      margin-bottom: 40px;
+    }
+  }
+
+  //service
+
+  #service {
+    height: 70vh;
+
+    & .sec-title {
+      margin-bottom: 40px;
+    }
+  }
+
+
+  
+}

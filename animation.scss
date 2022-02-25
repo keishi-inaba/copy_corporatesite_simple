@@ -1,0 +1,277 @@
+/*
+*画面遷移
+*/
+#splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  text-align: center;
+}
+
+#splash-logo {
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .8;
+}
+
+#splash_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.splash-bg {
+  display: none;
+}
+
+
+body.appear .splash-bg {
+  display: block;
+  animation: PageAnime;
+  animation-duration: 1.2s;
+  animation-timing-function:  ease-in-out;animation-fill-mode: forwards;
+  content: '';
+  position: fixed;
+  z-index: 900;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateX(-300%) skewX(45deg);
+  background-color: #333;
+}
+
+@keyframes PageAnime {
+  0% {
+    transform-origin: left;
+    transform: translateX(-300%) skewX(-45deg);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(500%) skewX(-45deg);
+  }
+}
+
+body.appear #container {
+  animation: PageAnime1;
+  animation-duration: 1s;
+  animation-delay: .6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnime1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/*
+*メニューアイコン
+*/
+/*
+*バーガーメニュー
+*/
+// open_btn
+.open_area {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  background: transparent;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 200;
+}
+
+.open_area .open_btn {
+  transition: all .6s;
+  width: 50px;
+  height: 50px;
+}
+
+.open_area span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border-radius: 5px;
+  background: #333;
+  width: 50%;
+  height: 2px;
+}
+
+.open_area span:nth-of-type(1) {
+  top: 15px;
+}
+.open_area span:nth-of-type(2) {
+  top: 23px;
+}
+.open_area span:nth-of-type(3) {
+  top: 31px;
+}
+
+.open_area.active .open_btn {
+  transform: rotate(360deg);
+}
+
+
+.open_area.active span:nth-of-type(1) {
+  top: 18px;
+  right: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 40%;
+}
+
+.open_area.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.open_area.active span:nth-of-type(3) {
+  top: 30px;
+  right: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 40%;
+}
+
+
+/*
+*scrolldown
+*/
+.scrolldown {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  bottom: 10px;
+  height: 50px;
+  margin: 30px 0;
+  padding: 10px 0;
+  animation: mousemove 1.6s ease-in-out infinite;
+
+  & span {
+    position: absolute;
+    left: -15px;
+    bottom: 20px;
+    color: #333;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      // top: 0px;
+      left: 17px;
+      bottom: -20px;
+      width: 1px;
+      height: 15px;
+      background: #333;
+      animation: pathmove 1.4s ease-in-out infinite;
+      opacity: 0;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -10px;
+    width: 25px;
+    height: 37px;
+    border-radius: 10px;
+    border: 1px solid #333;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid #333;
+  }
+}
+
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 10px;
+    opacity: 0;
+  }
+  50% {
+    height: 15px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 30px;
+    opacity: 0;
+  }
+}
+
+@keyframes mousemove {
+  0%{
+    bottom: 10px;
+  }
+  50% {
+    bottom: 5px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+
+//背景の動き
+#canvas_move {
+  position: relative;
+  height: 100px;
+  z-index: 99999;
+}
+
+#waveCanvas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+/*
+*テキストがフワッと出現
+*/
+
+.box {
+  opacity: 0;
+}
+
+.fadeUp {
+  animation: fadeAnime .5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
